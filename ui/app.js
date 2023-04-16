@@ -1294,6 +1294,12 @@ $(document).ready(() => {
       }
     }
   });
+  
+  $(".incidents-evidence-locker").click(function () {
+    $(".close-all").css("filter", "none");
+    let id = $(".manage-incidents-editing-title").data("id");
+    OpenEvidenceLocker(id)
+  })
 
   $(".manage-incidents-evidence-holder").on(
     "click",
@@ -5412,6 +5418,13 @@ function sendFine(citizenId, customFine, recommendedFine) {
   $.post(`https://${GetParentResourceName()}/sendFine`, JSON.stringify({
     citizenId,
     fine,
+  }));
+}
+
+// Use evidence locker
+function OpenEvidenceLocker(id) {
+  $.post(`https://${GetParentResourceName()}/OpenEvidenceLocker`, JSON.stringify({
+    id,
   }));
 }
 
