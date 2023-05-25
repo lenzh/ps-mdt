@@ -1697,7 +1697,7 @@ end)
 QBCore.Functions.CreateCallback('getWeaponInfo', function(source, cb)
     local Player = QBCore.Functions.GetPlayer(source)
     local weaponInfos = {}
-	if Config.InventoryForWeaponsImages == "ox_inventory" then
+	if Config.InventoryForWeaponsImages == "ox_inventory" then -- credits to Sampuke for the snippet
 		local inv = exports.ox_inventory:GetInventoryItems(source)
 		for _, item in pairs(inv) do
 			if string.find(item.name, "WEAPON_") then
